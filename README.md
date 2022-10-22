@@ -1,6 +1,10 @@
 # bht-wp-project1
 
-This template should help get you started developing with Vue 3 in Vite.
+- This project is made with Vue 3 in Vite. <br/>
+- See [Vite](https://vitejs.dev/guide/) for more information.
+- Also Check out [Vue 3](https://v3.vuejs.org/guide/introduction.html) for more information.
+
+- The docs folder contains the documentation for the project. <br/>
 
 ## Recommended IDE Setup
 
