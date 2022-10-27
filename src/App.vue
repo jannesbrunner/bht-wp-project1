@@ -17,6 +17,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/test">Do Test</RouterLink>
+        <RouterLink to="/results">Results</RouterLink>
       </nav>
     </div>
   </header>
@@ -40,6 +42,7 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 nav a.router-link-exact-active {
