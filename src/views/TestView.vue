@@ -2,8 +2,10 @@
   <div class="about">
     <h1>Test Screen</h1>
     <div v-if="!isTesting && !isFinish">
+    <div><strong>Name:</strong>&nbsp; &nbsp;<input type="text" v-model="name" /></div>
+    <div><strong>Age:</strong> &nbsp; &nbsp;<input type="number" v-model="age"/></div>
       <p>Click the button below to start the test.</p>
-      <button @click="doTest">Start Test</button>
+      <button @click="() => { if (checkInput()) {doTest()}}">Start Test</button>
     </div>
     <div class="test" v-if="isTesting">
       <p>Now Playing: <strong>{{currentFrequency}} Hertz</strong></p>
@@ -31,6 +33,8 @@ export default {
     return {
       isTesting: false,
       isFinish: false,
+      name: '',
+      age: 0,
       currentFrequency: 0,
       currentVolume: 0,
       frequencies: [250, 500, 1000, 2000, 4000, 8000],
@@ -50,6 +54,13 @@ export default {
       this.currentFrequency = this.frequencies.shift();
       this.playSound(this.currentFrequency);
     },
+    checkInput() {
+      if (this.name === '' || this.age <= 0) {
+        alert('Please input your name and age');
+        return false;
+      }
+      return true;
+    },
     answer(isYes) {
       this.answers.push({
         frequency: this.currentFrequency,
@@ -66,7 +77,27 @@ export default {
         this.isFinish = true;
         this.isTesting = false;
         console.log(this.answers);
+        this.saveTestResult();
       }
+    },
+    saveTestResult() {
+
+      // get data from localstorage if exists
+      let data = localStorage.getItem('testResults');
+      if(data) {
+        data = JSON.parse(data);
+      } else {
+        data = [];
+      }
+
+      let newEntry = {
+        name: this.name,
+        age: this.age,
+        answers: this.answers
+      }
+
+      data.push(newEntry);
+      localStorage.setItem('testResults', JSON.stringify(data));
     },
     playSound(frequency, gain=0, duration=0.5) {
       let oscillator;
