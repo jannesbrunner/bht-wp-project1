@@ -18,6 +18,11 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
+      path: '/results',
+      name: 'results',
+      component: () => import('../views/ResultsView.vue')
+    },
+    {
       path: '/test',
       name: 'test',
       // this will run the main test with the subject
