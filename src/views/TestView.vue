@@ -4,7 +4,8 @@
     <div v-if="!isTesting && !isFinish">
     <div><strong>Name:</strong>&nbsp; &nbsp;<input type="text" v-model="name" /></div>
     <div><strong>Age:</strong> &nbsp; &nbsp;<input type="number" v-model="age"/></div>
-      <p>Click the button below to start the test.</p>
+    <p>Adjust your Headphone volume to like 50%</p>  
+    <p>Click the button below to start the test.</p>
       <button @click="() => { if (checkInput()) {doTest()}}">Start Test</button>
     </div>
     <div class="test" v-if="isTesting">
@@ -20,6 +21,7 @@
     <div v-if="!isTesting && isFinish">
       <p>Test finished! Thank you</p>
     </div>
+    
   </div>
 </template>
 

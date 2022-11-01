@@ -31,3 +31,11 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Frequencies
+
+
+- 8000 Hz (should be passed by any age)
+- 13000 Hz (should be passed by under 50 years old)
+- 15000 hz (should be passed by under 35 years old)
+- 19000 hz (should be passed by under 20 years old, even 15 years old)
