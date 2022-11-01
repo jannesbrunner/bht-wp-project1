@@ -37,7 +37,41 @@ export default {
       age: 0,
       currentFrequency: 0,
       currentVolume: 0,
-      frequencies: [250, 500, 1000, 2000, 4000, 8000],
+      frequencies: [
+        250, 
+        500, 
+        1000, 
+        2000, 
+        4000, 
+        6000, 
+        6500, 
+        7000, 
+        7500, 
+        8000, 
+        8500, 
+        9000, 
+        9500, 
+        10000, 
+        10500, 
+        11000, 
+        11500, 
+        12000, 
+        12500, 
+        13000, 
+        13500, 
+        14000, 
+        14500, 
+        15000, 
+        15500, 
+        16000, 
+        16500, 
+        17000, 
+        17500, 
+        18000, 
+        18500, 
+        19000, 
+        19500, 
+        20000],
       answers: [],
       audioCtx: null,
     }
@@ -99,7 +133,7 @@ export default {
       data.push(newEntry);
       localStorage.setItem('testResults', JSON.stringify(data));
     },
-    playSound(frequency, gain=0, duration=0.5) {
+    playSound(frequency, gain=0, duration=1) {
       let oscillator;
       oscillator = this.audioCtx.createOscillator();
       let gainNode = this.audioCtx.createGain();
